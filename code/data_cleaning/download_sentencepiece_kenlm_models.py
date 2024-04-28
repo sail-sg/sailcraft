@@ -22,7 +22,7 @@ def download_sentencepiece_kenlm_models(output_dir_path: str) -> None:
     for lang in supported_sentencepiece_langs:
         try:
             output_sentencepiece = subprocess.check_output(
-                f"wget https://huggingface.co/datasets/sail/sailcraft_lm_resource/tree/main/{lang}.sp.model -P {output_dir_path}",  # http://dl.fbaipublicfiles.com/cc_net/lm/{lang}.sp.model for FB models
+                f"wget https://huggingface.co/datasets/sail/sailcraft_lm_resource/resolve/main/{lang}.sp.model -P {output_dir_path}",  # http://dl.fbaipublicfiles.com/cc_net/lm/{lang}.sp.model for FB models
                 shell=True,
             )
         except:
@@ -34,7 +34,7 @@ def download_sentencepiece_kenlm_models(output_dir_path: str) -> None:
     for lang in supported_kenlm_langs:
         try:
             output_kenlm = subprocess.check_output(
-                f"wget https://huggingface.co/datasets/sail/sailcraft_lm_resource/tree/main/{lang}.arpa.bin -P {output_dir_path}",  # http://dl.fbaipublicfiles.com/cc_net/lm/{lang}.arpa.bin for FB models
+                f"wget https://huggingface.co/datasets/sail/sailcraft_lm_resource/resolve/main/{lang}.arpa.bin -P {output_dir_path}",  # http://dl.fbaipublicfiles.com/cc_net/lm/{lang}.arpa.bin for FB models
                 shell=True,
             )
         except:
