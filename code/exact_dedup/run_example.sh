@@ -2,11 +2,11 @@
 
 SCRIPT_DIR=$(cd $(dirname "$0") && pwd)
 
-# INPUT_FILE=../data/data_output/near_dedup_output/sample/data_clean.jsonl
-# OUTPUT_DIR=../data/data_output/exact_dedup_output/sample
+# INPUT_FILE=$SCRIPT_DIR/../../data/data_output/near_dedup_output/sample/data_clean.jsonl
+# OUTPUT_DIR=$SCRIPT_DIR/../../data/data_output/exact_dedup_output/sample
 # ALIAS=sample
-# CACHE=../cache/exact_dedup_cache
-# DATA_DIR=../cache/exact_dedup_cache
+# CACHE=$SCRIPT_DIR/../../cache/exact_dedup_cache
+# DATA_DIR=$SCRIPT_DIR/../../cache/exact_dedup_cache
 
 INPUT_FILE=$(realpath $1)
 OUTPUT_DIR=$2
@@ -31,9 +31,10 @@ cargo run self-similar --data-file $DATA_DIR/$ALIAS.$SPLIT --length-threshold $T
 
 cargo run collect --data-file $DATA_DIR/$ALIAS.$SPLIT  --length-threshold $THRESHOLD --cache-dir $CACHE > $CACHE/$ALIAS.$SPLIT.remove.byterange
 
-cd ../../
+cd $SCRIPT_DIR/../..
 mkdir -p "$OUTPUT_DIR"
-python3 $SCRIPT_DIR/scripts/finish_single_file_hf.py $DATA_DIR/$ALIAS.$SPLIT \
-    $CACHE/$ALIAS.$SPLIT.remove.byterange \
-    $OUTPUT_DIR/$ALIAS.$SPLIT.jsonl
-mv $OUTPUT_DIR/$ALIAS.$SPLIT.jsonl $OUTPUT_DIR/$ALIAS.jsonl 
+python3 $SCRIPT_DIR/scripts/finish_single_file_hf.py \
+    --data_input_alias $DATA_DIR/$ALIAS.$SPLIT \
+    --remove_file $CACHE/$ALIAS.$SPLIT.remove.byterange \
+    --data_output $OUTPUT_DIR/$ALIAS.$SPLIT.jsonl
+mv $OUTPUT_DIR/$ALIAS.$SPLIT.jsonl $OUTPUT_DIR/data_clean.jsonl 

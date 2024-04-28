@@ -2,22 +2,25 @@
 
 SCRIPT_DIR=$(cd $(dirname "$0") && pwd)
 
-# INPUT_FILE../../data/data_input/sample.jsonl
-# LANGUAGE=id
-# OUTPUT_DIR=../../data/data_output/cleaned_data_output
-# LM_RESOURCE=../../lm_resource
-# CACHE=../../cache/data_clean_cache
 
-INPUT_FILE=$1
-LANGUAGE=$2
-OUTPUT_DIR=$3
-LM_RESOURCE=$4
-CACHE=$5
+# ALIAS=sample
+# INPUT_FILE=$SCRIPT_DIR/../../data/data_input/sample.jsonl
+# LANGUAGE=id
+# OUTPUT_DIR=$SCRIPT_DIR/../../data/data_output/cleaned_data_output
+# LM_RESOURCE=$SCRIPT_DIR/../../lm_resource
+# CACHE=$SCRIPT_DIR/../../cache/data_clean_cache
+
+ALIAS=$1
+INPUT_FILE=$2
+LANGUAGE=$3
+OUTPUT_DIR=$4
+LM_RESOURCE=$5
+CACHE=$6
 
 
 python $SCRIPT_DIR/main_filtering.py \
         --dataset_name $INPUT_FILE \
-        --dataset_alias sample \
+        --dataset_alias $ALIAS \
         --lang_dataset_id $LANGUAGE \
         --path_dir_save_dataset $OUTPUT_DIR \
         --path_sentencepiece_model $LM_RESOURCE/$LANGUAGE.sp.model \
@@ -27,4 +30,4 @@ python $SCRIPT_DIR/main_filtering.py \
         --log_folder_path $SCRIPT_DIR/filtering_logs  
 
 python $SCRIPT_DIR/write_arrow_to_jsonl.py \
-        --folder_path $OUTPUT_DIR/sample
+        --folder_path $OUTPUT_DIR/$ALIAS

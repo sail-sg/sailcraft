@@ -17,16 +17,17 @@ mkdir -p data/data_input
 mkdir -p data/data_output/cleaned_data_output 
 mkdir -p data/data_output/near_dedup_output 
 mkdir -p data/data_output/exact_dedup_output
+mkdir -p data/data_output/final_output
 
 ALIAS=sample
-INPUT_FILE=./data/data_output/cleaned_data_output/$ALIAS/data_clean.jsonl
-OUTPUT_DIR=./data/data_output/near_dedup_output/$ALIAS
+LANGUAGE=id
 
 
-### step1: data-cleaning
+# ### step1: data-cleaning
 bash code/data_cleaning/run_example.sh \
-    data/data_input/sample.jsonl \
-    id \
+    $ALIAS \
+    data/data_input/$ALIAS.jsonl \
+    $LANGUAGE \
     data/data_output/cleaned_data_output \
     lm_resource \
     cache/data_clean_cache
@@ -48,9 +49,19 @@ bash code/exact_dedup/run_example.sh \
     cache/exact_dedup_cache 
 
 
-### step4: output stats
+### step4: data-clean
+bash code/data_cleaning/run_example.sh \
+    $ALIAS \
+    data/data_output/exact_dedup_output/$ALIAS/data_clean.jsonl \
+    $LANGUAGE \
+    data/data_output/final_output \
+    lm_resource \
+    cache/data_clean_cache
 
-echo "Counting lines in cleaned data output: $(wc -l < data/data_output/cleaned_data_output/sample/data_clean.jsonl)"
-echo "Counting lines in near deduplication output: $(wc -l < data/data_output/near_dedup_output/sample/data_clean.jsonl)"
-echo "Counting lines in exact deduplication output: $(wc -l < data/data_output/exact_dedup_output/sample/sample.jsonl)"
+
+### step5: output stats
+echo "Counting lines in cleaned data output: $(wc -l < data/data_output/cleaned_data_output/$ALIAS/data_clean.jsonl)"
+echo "Counting lines in near deduplication output: $(wc -l < data/data_output/near_dedup_output/$ALIAS/data_clean.jsonl)"
+echo "Counting lines in exact deduplication output: $(wc -l < data/data_output/exact_dedup_output/$ALIAS/data_clean.jsonl)"
+echo "Counting lines in final output: $(wc -l < data/data_output/final_output/$ALIAS/data_clean.jsonl)"
 
