@@ -2,11 +2,21 @@ import sys
 import json
 import re
 from cmp_dedup import find_deleted_lines
+import argparse
 
-original = sys.argv[1]
-remove_file = sys.argv[2]
-deduped = sys.argv[3]
-# original_json = sys.argv[4]
+
+parser = argparse.ArgumentParser(description='Load a dataset.')
+parser.add_argument('--data_input_alias', type=str, default='sample.train')
+parser.add_argument('--remove_file', type=str, default='train')
+parser.add_argument('--data_output', type=str, default='sample.jsonl')
+parser.add_argument('--data_input_jsonl', type=str, default=None)
+args = parser.parse_args()
+
+data_input_alias = args.data_input_alias
+remove_file = args.remove_file
+data_output = args.data_output
+data_input_jsonl = args.data_input_jsonl
+
 
 remove = []
 with open(remove_file) as fin:
@@ -18,10 +28,9 @@ with open(remove_file) as fin:
 remove = remove[::-1]
 
 spliter = b'[DSEP]'
-# pattern = b'(\xff|[\x00-\x1f])+?[\s\S]*?\x00*?'
 pattern = b'(\xff|[\x00-\x09\x0b-\x1f])+?[\s\S]*?\x00*?'
 
-with open(original, "rb") as ds, open(deduped, "w", encoding="utf-8") as new_ds:
+with open(data_input_alias, "rb") as ds, open(data_output, "w", encoding="utf-8") as new_ds:
     start = 0
     while len(remove) > 0:
         a, b = remove.pop()
@@ -46,7 +55,8 @@ with open(original, "rb") as ds, open(deduped, "w", encoding="utf-8") as new_ds:
             json_obj = {"text": text_seg.decode('utf-8', errors='ignore')}
             new_ds.write(json.dumps(json_obj, ensure_ascii=False) + "\n") 
 
-# find_deleted_lines(
-#     original_path=original_json,
-#     deduped_path=deduped,
-# )
+if data_input_jsonl:
+    find_deleted_lines(
+        original_path=data_input_jsonl,
+        deduped_path=data_output,
+    )

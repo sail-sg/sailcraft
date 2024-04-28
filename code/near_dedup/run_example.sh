@@ -2,9 +2,9 @@
 
 SCRIPT_DIR=$(cd $(dirname "$0") && pwd)
 
-# INPUT_FILE='/home/aiops/doulx/code/sailor_data_script/data/data_output/cleaned_data_output/sample/data_clean.jsonl'
-# OUTPUT_DIR='/home/aiops/doulx/code/sailor_data_script/data/data_output/near_dedup_output/sample'
-# CACHE_PATH='/home/aiops/doulx/code/sailor_data_script/cache/near_dedup_cache'
+# INPUT_FILE='$SCRIPT_DIR/../../data/data_output/cleaned_data_output/sample/data_clean.jsonl'
+# OUTPUT_DIR='$SCRIPT_DIR/../../data/data_output/near_dedup_output/sample'
+# CACHE_PATH='$SCRIPT_DIR/../../cache/near_dedup_cache'
 
 INPUT_FILE=$1
 OUTPUT_DIR=$2

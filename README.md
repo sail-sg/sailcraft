@@ -30,10 +30,15 @@ As expected, you should observe the following log
 ```
 Counting lines in cleaned data output: 987
 Counting lines in near deduplication output: 974
-Counting lines in exact deduplication output: 979
+Counting lines in exact deduplication output: 963
 Counting lines in final output: 949
 ```
 The final output are `/data/data_output/exact_dedup_output/sample/sample.jsonl`.
+
+### Run on Your Own Dataset
+
+1. Place the `ALIAS.jsonl` in `./data/data_input/`
+2. Change the `ALIAS` and `LANGUAGE` in `./run_example.sh`.
 
 ### Case Studies
 
@@ -64,8 +69,6 @@ This script displays the 100 most frequent spans with a frequency greater than t
 | 3     | 'manusia sebelum mereka (penghuni-penghuni surga yang menjadi suami mereka) dan tidak pula oleh jin.'  |
 | 3     | 'tidak pernah disentuh oleh manusia sebelum mereka (penghuni-penghuni surga yang menjadi suami mereka' |
 | 3     | 'tidak pernah disentuh oleh manusia sebelum mereka (penghuni-penghuni surga yang menjadi suami merek'  |
-
-
 
 ### Acknowledgement
 
