@@ -9,12 +9,12 @@ The data cleaning part is especially optimized for south-east asian languages (e
 
 ## Requirements
 
-Install the packages and download the models for data cleaning:
+Install the packages and download the models for data cleaning. Here we only download the models for English, Chinese, Thai, Vietnamese, Indonesian, Malay, and Lao. You can add more languages by modifying the `--used_language_ids` parameter. The full language list can be found [here](data_cleaning/languages_id.py).
 
 ```
 pip install -r requirements.txt
 mkdir lm_resource
-python data_cleaning/download_sentencepiece_kenlm_models.py --output_dir_path lm_resource
+python code/data_cleaning/download_sentencepiece_kenlm_models.py --used_language_ids en zh th vi id ms lo --output_dir_path lm_resource
 ```
 
 Install Rust for exact deduplication, refer to [this guidance](https://github.com/google-research/deduplicate-text-datasets#installing) for more details.
