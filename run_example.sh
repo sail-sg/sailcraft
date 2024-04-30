@@ -1,4 +1,6 @@
 #!/bin/bash
+ALIAS=sample
+LANGUAGE=id
 
 ### step0: 
 
@@ -18,9 +20,6 @@ mkdir -p data/data_output/cleaned_data_output
 mkdir -p data/data_output/near_dedup_output 
 mkdir -p data/data_output/exact_dedup_output
 mkdir -p data/data_output/final_output
-
-ALIAS=sample
-LANGUAGE=id
 
 
 # ### step1: data-cleaning

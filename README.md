@@ -43,7 +43,7 @@ Counting lines in final output: 949
 ```
 
 This output confirms the sequential filtering and deduplication stages of the dataset.
-The final output can be accessed at `/data/data_output/final_output/sample/data_clean.jsonl`.
+The final output can be accessed at `data/data_output/final_output/sample/data_clean.jsonl`.
 
 ## Running with Your Own Dataset
 
