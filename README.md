@@ -14,6 +14,7 @@ Install the packages and download the models for data cleaning. Here we only dow
 ```
 pip install -r requirements.txt
 mkdir lm_resource
+wget https://huggingface.co/datasets/sail/sailcraft_lm_resource/resolve/main/lid.176.bin -P lm_resource
 python code/data_cleaning/download_sentencepiece_kenlm_models.py --used_language_ids en zh th vi id ms lo --output_dir_path lm_resource
 ```
 
