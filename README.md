@@ -105,13 +105,12 @@ Thanks to the contributors of the following projects:
 If you use this repository or sailor models, please cite
 
 ```
-@misc{dou2024sailor,
-      title={Sailor: Open Language Models for South-East Asia}, 
-      author={Longxu Dou and Qian Liu and Guangtao Zeng and Jia Guo and Jiahui Zhou and Wei Lu and Min Lin},
-      year={2024},
-      eprint={2404.03608},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{dou2024sailor,
+  title={Sailor: Open Language Models for South-East Asia},
+  author={Longxu Dou and Qian Liu and Guangtao Zeng and Jia Guo and Jiahui Zhou and Wei Lu and Min Lin},
+  journal={ArXiv},
+  year={2024},
+  volume={abs/2404.03608},
 }
 ```
 
