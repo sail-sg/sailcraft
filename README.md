@@ -1,6 +1,8 @@
 # SailCraft: Data Toolkit for Sailor Language Models
 
-[![Homepage](https://img.shields.io/badge/🏠-Homepage-3C47EB.svg)](https://sailorllm.github.io/) &nbsp;&nbsp; [![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-E87948.svg)](https://huggingface.co/sail/Sailor-7B) &nbsp;&nbsp; [![Technical Report](https://img.shields.io/badge/arXiv-2404.03608-b31b1b.svg)](https://arxiv.org/pdf/2404.03608.pdf)
+[![Homepage](https://img.shields.io/badge/🏠-Homepage-3C47EB.svg)](https://sea-sailor.github.io/) &nbsp;&nbsp; [![HuggingFace](https://img.shields.io/badge/🤗-HuggingFace-E87948.svg)](https://huggingface.co/sail/Sailor-7B) &nbsp;&nbsp; [![Technical Report](https://img.shields.io/badge/arXiv-2404.03608-b31b1b.svg)](https://arxiv.org/pdf/2404.03608.pdf)
+
+
 
 
 This repository provides a data processing pipeline for large language model training. 
@@ -105,11 +107,11 @@ Thanks to the contributors of the following projects:
 If you use this repository or sailor models, please cite
 
 ```
-@article{dou2024sailor,
-  title={Sailor: Open Language Models for South-East Asia},
-  author={Dou, Longxu and Liu, Qian and Zeng, Guangtao and Guo, Jia and Zhou, Jiahui and Lu, Wei and Lin, Min},
-  journal={arXiv preprint arXiv:2404.03608},
-  year={2024}
+@inproceedings{dou-etal-2024-sailor,
+    title = "Sailor: Open Language Models for South-{E}ast {A}sia",
+    author = "Dou, Longxu and Liu, Qian and Zeng, Guangtao and Guo, Jia  and Zhou, Jiahui and Mao, Xin and Jin, Ziqi and Lu, Wei and Lin, Min",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+    year = "2024",
 }
 ```
 
