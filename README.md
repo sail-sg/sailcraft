@@ -106,8 +106,15 @@ Thanks to the contributors of the following projects:
 
 If you use this repository or sailor models, please cite
 
+@article{sailor2report,
+title  = {Sailor2: Sailing in South-East Asia with Inclusive Multilingual LLM},
+author = {Longxu Dou and Qian Liu and Fan Zhou and Changyu Chen and Zili Wang and Ziqi Jin and Zichen Liu and Tongyao Zhu and Cunxiao Du and Penghui Yang and Haonan Wang and Jiaheng Liu and Yongchi Zhao and Xiachong Feng and Xin Mao and Man Tsung Yeung and Kunat Pipatanakul and Fajri Koto and Min Si Thu and Hynek Kydl{\'\i}{\v{c}}ek and Zeyi Liu and Qunshu Lin and Sittipong Sripaisarnmongkol and Kridtaphad Sae-Khow and Nirattisai Thongchim and Taechawat Konkaew and Narong Borijindargoon and Anh Dao and Matichon Maneegard and Phakphum Artkaew and Zheng-Xin Yong and Quan Nguyen and Wannaphong Phatthiyaphaibun and Hoang H. Tran and Mike Zhang and Shiqi Chen and Tianyu Pang and Chao Du and Xinyi Wan and Wei Lu and Min Lin},
+journal={arXiv preprint arXiv:2502.12982},
+year   = {2025}
+}
+
 ```
-@inproceedings{dou-etal-2024-sailor,
+@inproceedings{sailor1report,
     title = "Sailor: Open Language Models for South-{E}ast {A}sia",
     author = "Dou, Longxu and Liu, Qian and Zeng, Guangtao and Guo, Jia  and Zhou, Jiahui and Mao, Xin and Jin, Ziqi and Lu, Wei and Lin, Min",
     booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
